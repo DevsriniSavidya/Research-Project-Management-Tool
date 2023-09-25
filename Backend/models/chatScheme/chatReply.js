@@ -1,6 +1,7 @@
 import mongoose from "mongoose";
 const Schema = mongoose.Schema;
 
+//chat reply schema
 const chatReplySchema = new Schema(
   {
     userId: {

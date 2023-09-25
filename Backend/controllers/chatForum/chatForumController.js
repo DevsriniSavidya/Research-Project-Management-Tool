@@ -1,5 +1,6 @@
 import ChatForum from "../../models/chatScheme/chatForum.js";
 
+// add chat forum
 export const addChatForum = async (req, res) => {
   try {
     const chat = await ChatForum.create(req.body);
@@ -9,6 +10,7 @@ export const addChatForum = async (req, res) => {
   }
 };
 
+// get all chat forums by user id
 export const getForumBYGroupID = async (req, res) => {
   const groupId = req.params.gid;
   try {
@@ -22,6 +24,7 @@ export const getForumBYGroupID = async (req, res) => {
   }
 };
 
+// get chat forum by id
 export const getOneForum = async (req, res) => {
   const forId = req.params.id;
   try {
@@ -33,6 +36,7 @@ export const getOneForum = async (req, res) => {
   }
 };
 
+//delete chat forum
 export const deleteChatForum = async (req, res) => {
   let rId = req.params.id;
   await ChatForum.findByIdAndDelete(rId)
@@ -47,6 +51,7 @@ export const deleteChatForum = async (req, res) => {
     });
 };
 
+// update chat forum
 export const updateChatForum = async (req, res) => {
   const fId = req.params.id;
 
@@ -70,6 +75,7 @@ export const updateChatForum = async (req, res) => {
     });
 };
 
+// get all chat forums
 export const getForums = async (req, res) => {
   try {
     const forum = await ChatForum.find();

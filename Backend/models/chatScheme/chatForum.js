@@ -1,6 +1,7 @@
 import mongoose from "mongoose";
 const Schema = mongoose.Schema;
 
+//chat forum schema
 const chatForumSchema = new Schema(
   {
     userId: {

@@ -1,5 +1,6 @@
 import ChatReply from "../../models/chatScheme/chatReply.js";
 
+// add chat reply
 export const addChatReply = async (req, res) => {
   try {
     const chat = await ChatReply.create(req.body);
@@ -9,6 +10,7 @@ export const addChatReply = async (req, res) => {
   }
 };
 
+// get all chat replies by user id
 export const getReplyBYForumID = async (req, res) => {
   const ForumId = req.params.fid;
   try {
@@ -22,6 +24,7 @@ export const getReplyBYForumID = async (req, res) => {
   }
 };
 
+//delete chat reply
 export const deleteChatReply = async (req, res) => {
   let rId = req.params.id;
   await ChatReply.findByIdAndDelete(rId)
@@ -36,6 +39,7 @@ export const deleteChatReply = async (req, res) => {
     });
 };
 
+// update chat reply
 export const updateChatReply = async (req, res) => {
   const rId = req.params.id;
 
@@ -59,6 +63,7 @@ export const updateChatReply = async (req, res) => {
     });
 };
 
+//get one chat reply by id
 export const getOneReply = async (req, res) => {
   const rid = req.params.id;
 

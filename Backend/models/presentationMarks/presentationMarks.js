@@ -1,6 +1,7 @@
 import mongoose from "mongoose";
 const Schema = mongoose.Schema;
 
+// Create a schema for the presentation marks
 const presentationSchema = new Schema(
   {
     projectId: {

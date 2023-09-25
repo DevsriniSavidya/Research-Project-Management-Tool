@@ -1,5 +1,6 @@
 import MarkingScheme from "../../models/markingScheme/markingScheme.js";
 
+//add marking
 export const addMarkingScheme = async (req, res) => {
   try {
     const marking = await MarkingScheme.create(req.body);
@@ -9,6 +10,7 @@ export const addMarkingScheme = async (req, res) => {
   }
 };
 
+//get marking
 export const getMarkingScheme = async (req, res) => {
   try {
     const marking = await MarkingScheme.find();
@@ -18,6 +20,7 @@ export const getMarkingScheme = async (req, res) => {
   }
 };
 
+//get marking by id
 export const getOneMarking = async (req, res) => {
   const mid = req.params.id;
 
@@ -29,6 +32,7 @@ export const getOneMarking = async (req, res) => {
   }
 };
 
+//update marking
 export const updateMarking = async (req, res) => {
   const mId = req.params.id;
 
@@ -54,6 +58,7 @@ export const updateMarking = async (req, res) => {
     });
 };
 
+//get marking by specialization
 export const getMarkingBySpecialization = async (req, res) => {
   const specialization = req.params.specialization;
   try {
@@ -67,6 +72,7 @@ export const getMarkingBySpecialization = async (req, res) => {
   }
 };
 
+//delete marking
 export const deleteMarking = async (req, res) => {
   let mId = req.params.id;
   await MarkingScheme.findByIdAndDelete(mId)

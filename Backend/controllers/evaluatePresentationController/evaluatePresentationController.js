@@ -1,5 +1,8 @@
 import PresentationMarks from "../../models/presentationMarks/presentationMarks.js";
 
+// Controller for the evaluation of the presentation
+
+//add the presentation marks to the database
 export const addPresentationMark = async (req, res) => {
   try {
     const marks = await PresentationMarks.create(req.body);
@@ -9,6 +12,7 @@ export const addPresentationMark = async (req, res) => {
   }
 };
 
+//get all the presentation marks
 export const getPresentationMarks = async (req, res) => {
   try {
     const marks = await PresentationMarks.find();
@@ -18,6 +22,7 @@ export const getPresentationMarks = async (req, res) => {
   }
 };
 
+//get the presentation marks of a specific presentation
 export const getMarksByType = async (req, res) => {
   const marks = req.params.type;
   try {
